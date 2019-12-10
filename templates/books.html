@@ -1,0 +1,26 @@
+{% extends 'template.html' %}
+
+{% block content %}
+    <table class="table table-borderless">
+        <thead>
+            <tr>
+                <td>No.</td>
+                <td>Title</td>
+                <td>Author</td>
+                <td>ISBN</td>
+                <td>Price</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% for book in books %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ book['title'] }}</td>
+                <td>{{ book['authors'] }}</td>
+                <td>{{ book['isbn'] }}</td>
+                <td>{{ book['price'] }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
